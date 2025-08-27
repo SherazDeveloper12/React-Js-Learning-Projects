@@ -9,10 +9,10 @@ export default function header(){
             </div>
             <nav>
                 <ul>
-                    <li>Home</li>
-                    <li>About us</li>
-                    <li>Contact us</li>
-                    <li>Shop</li>
+                    <li><a href='/'>Home</a></li>
+                    <li><a href='/about'>About us</a></li>
+                    <li><a href='/contact'>Contact us</a></li>
+                    <li><a href='/shop'>Shop</a></li>
                 </ul>
                 <div className="nav-icons">
                  <ShoppingCartIcon/>

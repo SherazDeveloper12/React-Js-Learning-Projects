@@ -18,7 +18,7 @@ table {
     border-collapse: collapse;
     margin: 20px 0;
 }
-.aboutus {
+.AddClientDiv {
     display: flex;
     flex-direction: column;
     padding: 20px;

@@ -1,9 +1,11 @@
 import '../../pages/about us/about.css';
+import Header  from "../../components/header/Header";
 import { useState } from 'react';
 // import data from '../../constant/tabledata';
 import TableData from '../../components/tableData/TableData.js';
 import AddClient from '../../components/addClient/AddClient.js';
 export default function AboutUs() {
+ 
       const [newdata,setdata] = useState ([
     {
         id: 1,
@@ -48,7 +50,8 @@ export default function AboutUs() {
   return (
    
     <div className="aboutus">
-      
+       <Header/>
+<div className='AddClientDiv'>
       <table>
         <tr>
           <th>id</th>
@@ -67,5 +70,6 @@ export default function AboutUs() {
        <AddClient AddNewUser= {AddNewUser}/>
           </div>
     </div>
+     </div>
   );
 }

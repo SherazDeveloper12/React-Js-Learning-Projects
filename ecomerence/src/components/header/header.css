@@ -44,3 +44,8 @@ a {
     text-decoration: none;
     color: #333;
 }
+@media (width:350px)  { 
+
+    .header{
+display: none;    }
+}

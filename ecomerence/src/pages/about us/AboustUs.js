@@ -29,6 +29,7 @@ export default function AboutUs() {
         password: "mike123"
     },
   ]);
+  const [client, setclient] = useState(null);
  
  
    const onclickhandler = (id) => {
@@ -37,7 +38,15 @@ export default function AboutUs() {
      console.log(filtereddata);
     setdata([...filtereddata]);
     }
-     
+    const onupdateclicker = (updatingclient) => {
+      setclient(updatingclient);
+      console.log(client);
+    }
+    const onupdatehandler = (data, id) => {
+      let updateddata = newdata.map(item => item.id === data.id ? data : item);
+      setdata([...updateddata]);
+      setclient(null);
+    }     
    
     const AddNewUser = (data) => {
         
@@ -63,11 +72,11 @@ export default function AboutUs() {
 
         </tr>
         {newdata.map((item,index) => (
-          <TableData data={item} key={index} onclickhandler={onclickhandler}/>
+          <TableData  onupdateclicker={onupdateclicker} data={item} key={index} onclickhandler={onclickhandler}/>
         ))}
       </table>
       <div className='addclient'>  
-       <AddClient AddNewUser= {AddNewUser}/>
+       <AddClient onupdatehandler={onupdatehandler} client={client} AddNewUser= {AddNewUser}/>
           </div>
     </div>
      </div>

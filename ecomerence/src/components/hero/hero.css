@@ -1,0 +1,32 @@
+.hero{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.image{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.image img{
+    
+    height: 400px; 
+    width: 50%;
+}
+.content{
+    width: 40%;
+}
+.content h1{
+    font-family: DM Sans;
+    font-size: 3rem;
+    font-weight: 700;
+    font-style: bold;
+    color: #333;
+}
+.content p{
+    font-family: DM Sans;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: #666;
+}

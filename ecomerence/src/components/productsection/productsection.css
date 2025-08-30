@@ -1,8 +1,30 @@
-.product-grid {
+.product-section {
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;    
-    flex-direction: row;
-    gap: 20px;
+    
+    align-items: center;
+    flex-direction: column;
+   position: relative;
     padding: 20px;
+}
+ .popup-form{
+           display: none  ;
+            width: 100%;
+        }
+        .active{
+            display: flex;
+            justify-content: center;
+        }
+        .addnewuser-btn{
+    position: absolute;
+    right: 9em;
+    top: -5em;
+    z-index: 1;
+    background-color: green;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
 }

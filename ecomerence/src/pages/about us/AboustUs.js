@@ -49,9 +49,10 @@ export default function AboutUs() {
     }     
    
     const AddNewUser = (data) => {
-        
+        const maxId =
+      newdata.length > 0 ? Math.max(...newdata.map((u) => u.id)) : 0;
       setdata([...newdata, {
-        id: newdata.length + 1,
+        id: maxId + 1,
         username: data.username,
         email: data.email,
         password: data.password,

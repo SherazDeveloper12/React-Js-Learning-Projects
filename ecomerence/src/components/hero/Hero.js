@@ -8,7 +8,7 @@ export default function Hero() {
                 <p>Welcome to ShopEase, your one-stop shopping hub! Discover an array of top-quality products, unbeatable deals, and a seamless shopping experience. Shop smarter, live better with ShopEase!</p>
               <Button label="Shello Now" onClick={() => alert('Shop Now Clicked!')} />
             </div>
-            <div className="image">
+            <div className="hero-image">
                 <img src={require("../../assests/heroimg.png")} alt="Hero" />
         </div></div>
     )

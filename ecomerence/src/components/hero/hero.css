@@ -3,13 +3,13 @@
     flex-direction: row;
     justify-content: space-between;
 }
-.image{
+.hero-image{
     width: 60%;
     display: flex;
     justify-content: center;
     align-items: center;
 }
-.image img{
+.hero-image img{
     
     height: 400px; 
     width: 50%;

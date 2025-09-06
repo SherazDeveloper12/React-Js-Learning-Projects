@@ -1,4 +1,21 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
+import {collection, addDoc,  getDoc} from "firebase/firestore"
+import {db} from "../../config/firestore"
+// firebase store getting products
+// export const getProducts = createAsyncThunk(
+// "products/getProducts",
+// async()=>{
+//   try {
+//     const collectionRef = collection(db, "Product")
+//     const response = await getDoc(collectionRef)
+//     console.log("response from firenbase in st",response)
+//   } catch (error) {
+//     console.log(error)
+//   }
+//   return response
+// }
+// )
+// fake store 
 export const fetchProducts = createAsyncThunk(
     "products/fetchProducts",
     async () => {

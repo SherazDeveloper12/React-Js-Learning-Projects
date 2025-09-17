@@ -1,5 +1,5 @@
-.add-product{
-    width: 50%;
+.add_product{
+    width: 100%;
     border: 2px solid #ccc;
    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
     background-color: rgba(255, 255, 255, 0.5);
@@ -13,14 +13,14 @@
     justify-content: center;
     align-items: center;
 }
-input, select, textarea{
+ .add_product input, .add_product select, .add_product textarea{
     padding: 10px;
     border: 1px solid #ccc;
     border-radius: 4px;
     font-size: 1rem;
     width: 90%;
 }
-.product-category-selector{
+.product_category_selector{
     display: flex;
     width: 90%;
 }

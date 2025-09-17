@@ -10,7 +10,6 @@ export const fetchingStudents = createAsyncThunk(
       const docs = await getDocs(collection(db, "Students"));
        const data = [] ;
      docs.forEach((doc) => {
-  console.log("data in async function",doc.data());
    data.push({
     id: doc.id,
     ...doc.data()
@@ -43,9 +42,10 @@ export const deleteStudent = createAsyncThunk(
 export const updateMyStudent = createAsyncThunk(
     "updateMyStudent",
     async(student)=>{
+        console.log( "student received in my updatemystudent action is =>" , student)
         const docRef = doc(db, "Students" , student.id)
         console.log("student in update student action", student)
-        await updateDoc(docRef, student)
+        await updateDoc(docRef, student);
         return student
     }
 )
@@ -56,9 +56,10 @@ export const studentSlice = createSlice({
         updateStudent: null
     },
     reducers:{updatestudent: (state,action)=>{
-        console.log ("student in update student",action.payload)
         let studentbeingUpdate = state.Students.filter( (student)=> student.id === action.payload)
         state.updateStudent = studentbeingUpdate[0]
+                console.log ("student in update student reducer 2",studentbeingUpdate[0])
+
     }
      
     },
@@ -76,8 +77,8 @@ export const studentSlice = createSlice({
       console.log("remaining students now",response)
     })
     builder.addCase(updateMyStudent.fulfilled, (state,action)=>{
-     let response  = state.Students.map((student)=>   student.id === action.payload.id)
- state.Students = response
+    state.Students = state.Students.map((student) =>
+    student.id === action.payload.id ? action.payload : student)
 state.updateStudent = null
     })
 }

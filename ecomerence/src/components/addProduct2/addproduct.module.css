@@ -1,0 +1,108 @@
+.form{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    z-index: 2;
+    top: 50vh;
+    left: 50vw;
+    transform: translate(-50%, -50%);
+    border: 2px solid #ccc;
+    padding: 5px;
+    background-color:rgb(240, 240, 241);
+    border-radius: 5px;
+    filter: drop-shadow(8px 8px 10px gray);
+}
+.formContainer{
+    display: flex;
+     flex-direction: column;
+     align-items: center;
+     width: 255px;
+     
+}
+.formControls{
+    display: flex;
+    justify-content: flex-end;
+}
+.formControls svg {
+    width: 22.5px;
+    height: 22.5px;
+    cursor: pointer;
+    color: rgb(34, 113, 177);
+}
+.formContainer input, .formContainer textarea, .formContainer select{
+     margin: 10px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+ .formContainer textarea{
+    margin: 5px 0px !important;
+ }
+ .productTitle_div input{
+    margin: 5px 0px !important;
+ }
+ .Description_Div{
+    margin: 10px;
+ }
+.PriceCategoryBox{
+     display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+}
+.PriceBox input{
+     padding: 5px !important;
+     margin: 0px  0px !important;
+ width: 125px;
+}
+.formContainer select{
+    width: 128px;
+    padding: 5px !important;
+     margin: 0px  0px !important;
+}
+.ReviewRatingStockBox{
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 10px;
+}
+.ReviewRatingStockBox input{
+     padding: 5px !important;
+ width: 95px;
+ margin: 0px  0px !important;
+}
+.ReviewRatingStockBox input::placeholder{
+    text-align: center;
+}
+.imageInput{
+ margin: 10px !important;
+    padding: 10px !important;
+    border: 1px solid #ccc !important;
+    border-radius: 4px !important;
+    width: 200px;
+    background-color: white;
+}
+.outlay{
+    position:fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    width: 100%;
+height: 100vh;
+background-color: rgba(204, 196, 196, 0.61);
+/* filter: blur(-870px); */
+}
+.input_label_div{
+    display: flex;
+    flex-direction: column;
+    font-size: small !important;
+}
+.PriceBox{
+display: flex;
+justify-content: space-between;
+align-items: center;
+    gap: 30px;
+    margin: 10px;
+}

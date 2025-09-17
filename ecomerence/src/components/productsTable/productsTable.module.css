@@ -1,0 +1,86 @@
+.ProductsTableContainer{
+    width: 100%;
+  display: flex;
+  flex-direction: column;
+    box-sizing: border-box;
+    gap: 10px;
+    margin: 20px 0;
+    
+}
+.TableHeader{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.TableControls{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 30px;
+}
+.TableControlBtns{
+   border: 2px solid rgb(34, 113, 177) !important;
+        color: rgb(34, 113, 177) !important;
+    font-family: sans-serif;
+    border-radius: 3px;
+    padding: 5px 9px;
+    font-weight: 300;
+    background-color:rgb(240, 240, 241) !important;
+}
+.TableControlBtns:hover{
+    cursor: pointer;
+}
+.ApplyBtns, .FilterBtns{
+  display: flex;
+  gap: 10px;
+}
+.select{
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+.Table table{
+
+    border-collapse: collapse;
+  
+     border: 2px solid hsl(0, 0%, 80%);
+}
+
+.Table th,.Table td {
+     
+    padding: 12px 16px;
+    background-color: #f9f9f9;
+    color: #222;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    font-size: 16px;
+    text-align: left;
+}
+.Table th {
+     background-color: #ffffff;
+    color: rgb(34, 113, 177);
+   font-weight: 400;
+}
+.firstRow{
+  border: 2px solid #ccc;
+}
+.descriptionColumn{
+  font-size:x-small!important;
+  width: 355px;
+}
+.ProductBtns{
+  display: flex;
+  gap: 10px;
+    color: rgb(34, 113, 177) !important;
+}
+.btn{
+   cursor: pointer;
+}
+.btn:hover{
+  /* color: rgb(101, 34, 177) !important; */
+  font-weight: 500 !important;
+}
+.checkbox input:checked{
+  color: red;
+  background-color: black;
+}

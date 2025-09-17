@@ -1,5 +1,5 @@
 import * as yup from 'yup';
-import './addclient.css'
+import Styles from './addclient.module.css'
 import { useState, useEffect } from 'react';
 
 export default function AddClient(props){
@@ -46,7 +46,7 @@ seterror("" );
 
 
     return(
-         <div>
+         <div className={Styles.AddClientDIV}>
           <div style={{color:"red"}}>{error}</div>
                   <input value={addname} onChange={(e)=>setname(e.target.value)} type="text" id="addusername" placeholder='username'/>
                   <input value={addemail} onChange={(e)=>setemail(e.target.value)} type="text" id="addemail" placeholder='email'/>

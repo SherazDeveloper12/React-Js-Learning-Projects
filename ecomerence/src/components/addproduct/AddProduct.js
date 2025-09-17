@@ -2,7 +2,7 @@ import { useState, useEffect, } from "react"
 import { useSelector, useDispatch } from "react-redux";
 import { addPorduct } from "../../features/slices/productSlice";
 import {products} from '../../features/slices/productSlice' 
-import './addproduct.css'
+import Styles from './addproduct.module.css'
 export default function AddProduct() {
     const [title, setTitle] = useState("");
     const [price, setPrice] = useState("");
@@ -33,15 +33,15 @@ export default function AddProduct() {
     }
     return (
 
-        <div className="add-product">
-           <div className="form">
+        <div className={Styles.add_product}>
+           <div className={Styles.form}>
                 <input onChange={(e) => setTitle(e.target.value)} type="text" placeholder="Product Title" />
                 <input onChange={(e) => setPrice(e.target.value)} type="text" placeholder="Price" />
                 <input onChange={(e) => setReviews(e.target.value)} type="text" placeholder="Total Reviews" />
                 <input onChange={(e) => setRating(e.target.value)} type="text" placeholder="Rating" />
                 <input onChange={(e) => setImage(e.target.value)} type="text" placeholder="Product image Url" />
 
-                <div className="product-category-selector"> <p>Select Product Category:</p>
+                <div className={Styles.product_category_selector}> <p>Select Product Category:</p>
                     <select name="Category" id="category-select" onChange={(e) => setCategory(e.target.value)}>
                        <option value="" disabled selected>Select an option</option>
                         <option value="men's clothing">men's clothing</option>

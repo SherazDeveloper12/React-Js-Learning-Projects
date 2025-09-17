@@ -1,19 +1,13 @@
 import Product from "../product/Product";
-import './productsection.css'
+import Styles from './productsection.module.css'
 import AddProduct from '../addproduct/AddProduct';
-export default function ProductSection() {
-    const clickhandler=()=>{
-        const popupform=document.querySelector('.popup-form');
-        popupform.classList.toggle('active')
-    }
+import { useState } from "react";
+
+export default function ProductSection() {    
     return (
-        <div className="product-section">
+        <div className={Styles.product_section}>
             <h2>Featured Products</h2>
-            <div className="product-section">
-                   <button onClick={clickhandler} className="addnewuser-btn">Add New Product</button> 
-                 <div  className='popup-form'>
-        <AddProduct />
-      </div>
+            <div className={Styles.product_section}>
                 <Product />
             </div>
         </div>

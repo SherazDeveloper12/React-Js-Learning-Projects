@@ -1,0 +1,16 @@
+.student_container{
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+}
+.student_container table {
+width: 70vw;
+}
+.student{
+    background-color: gray;
+}
+.student_pp{
+    width: 45px;
+    border-radius: 25px;
+    box-shadow:5px 5px 5px lightgreen;
+}

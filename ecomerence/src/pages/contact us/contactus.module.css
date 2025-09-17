@@ -1,0 +1,8 @@
+.contactus{
+    display: flex;
+    flex-direction: column;
+    background-color: antiquewhite;
+    gap: 25px;
+    width: 100%;
+    height: 100vh;
+}

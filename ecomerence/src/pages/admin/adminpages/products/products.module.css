@@ -1,0 +1,35 @@
+.Products{
+display: flex;
+background: rgb(240, 240, 241);
+font-family: sans-serif;
+position: relative;
+}
+.Products h1{
+  font-weight: normal;
+  font-size:  1.5em;
+}
+.Products_container{
+    width: 100%;
+    padding: 10px 20px;
+    padding-top: 15px;
+}
+.Products_TopBox{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+.Btn{
+    border: 2px solid rgb(34, 113, 177) !important;
+        color: rgb(34, 113, 177) !important;
+    font-family: sans-serif;
+    border-radius: 3px;
+    padding: 5px 9px;
+    font-weight: 300;
+      background-color:rgb(240, 240, 241) !important;
+}
+.Btn:hover{
+    /* background: rgb(34, 113, 177) !important;
+    color: white !important; */
+    cursor: pointer;
+   
+}

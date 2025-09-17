@@ -1,4 +1,4 @@
-import '../product/product.css'
+import Styles from '../product/product.module.css'
 import { useSelector, useDispatch } from "react-redux";
 import { useEffect, } from "react";
 import { fetchProducts, deleteProduct } from "../../features/slices/productSlice";
@@ -29,42 +29,42 @@ export default function Product() {
   return (
     <div>
      
-      <div  className="product-container">
+      <div  className={Styles.product_container}>
      
         {products.map((product) => (
-          <div className="product-card" key={product.id}>
-            <div className='image'>
+          <div className={Styles.product_card} key={product.id}>
+            <div className={Styles.image}>
 
               <img src={product.image} alt={product.title} />
             </div>
-            <div className='product-info'>
-              <div className='product-title-price'>
+            <div className={Styles.product_info}>
+              <div className={Styles.product_title_price}>
                 <h3>{product.title}</h3>
               </div>
-              <div className='product-rating'>
+              <div className={Styles.product_rating}>
                 <span> <p>{product.rating.rate} ★</p></span>
                 <p>{product.rating.count} reviews</p>
               </div>
-              <p className='product-price'>${product.price}</p>
+              <p className={Styles.product_price}>${product.price}</p>
 
               <p >{product.description}</p>
-              <div className='product-stock'>
-                <div className='category'>
-                  <p className='stockname' >Category:</p>
-                  <p className='stockdetail'>{product.category}</p>
+              <div className={Styles.product_stock}>
+                <div className={Styles.category}>
+                  <p className={Styles.stockname} >Category:</p>
+                  <p className={Styles.stockdetail}>{product.category}</p>
                 </div>
-                <div className='product-id'>
-                  <p className='stockname'>Product id:</p>
-                  <p className='stockdetail'>{product.id}</p>
+                <div className={Styles.product_id}>
+                  <p className={Styles.stockname}>Product id:</p>
+                  <p className={Styles.stockdetail}>{product.id}</p>
                 </div>
-                <div className='Delivery'>
-                  <p className='stockname'>Delivery:</p>
-                  <p className='stockdetail'>all around the world</p>
+                <div className={Styles.Delivery}>
+                  <p className={Styles.stockname}>Delivery:</p>
+                  <p className={Styles.stockdetail}>all around the world</p>
                 </div>
               </div>
-              <div className='btn-group'>
-                <button onClick={()=>deleteClickHandler(product.id)} className='btn'>Delete</button>
-                <button onClick={()=>updateClickHandler(product)} className='btn' style={{ backgroundColor: "green" }}>Update</button>
+              <div className={Styles.btn_group}>
+                <button onClick={()=>deleteClickHandler(product.id)} >Delete</button>
+                <button onClick={()=>updateClickHandler(product)}style={{ backgroundColor: "green" }}>Update</button>
               </div>
             </div>
           </div>

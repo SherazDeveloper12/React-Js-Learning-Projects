@@ -1,12 +1,22 @@
 import Styles from './login.module.css'
 import { Link } from "react-router-dom"
 import { useState } from "react"
+import { useDispatch } from "react-redux"
+import { login } from '../../features/slices/authslice'
 import Button from "../../components/button/Button"
 export default function Login() {
+    const dispatch = useDispatch();
     const [email,setEmail]=useState('')
     const [password,setPassword]=useState('')
     const clickhandler=()=>{
-        console.log("signup button clicked")
+     let user={
+        email,
+      password
+     }
+dispatch(login(user))
+     console.log("user from login component",user)
+     setEmail('')
+     setPassword('')
     }
     return (
     <div className={Styles.Login}>

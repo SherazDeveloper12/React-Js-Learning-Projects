@@ -10,6 +10,8 @@ import Admin from '../pages/admin/Admin';
 import Products from "../pages/admin/adminpages/products/Products"
 import Blogs from "../pages/admin/adminpages/blogs/Blogs"
 import Users from "../pages/admin/adminpages/users/Users"
+import Signup from '../pages/signup/Signup';
+import Login from '../pages/login/Login';
 export default function Navigation() {
   return (
 <BrowserRouter> <Routes>
@@ -21,6 +23,8 @@ export default function Navigation() {
         <Route path="/blogs" element={<Blogs />} /> {/* Catch-all for 404 */}
         <Route path="/products" element={<Products />} /> {/* Catch-all for 404 */}
         <Route path="/users" element={<Users />} /> {/* Catch-all for 404 */}
+        <Route path="/signup" element={<Signup />} /> {/* Catch-all for 404 */}
+        <Route path="/login" element={<Login />} /> {/* Catch-all for 404 */}
       </Routes> </BrowserRouter>  
   );
 }

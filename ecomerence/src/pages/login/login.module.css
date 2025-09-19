@@ -1,0 +1,98 @@
+.Login{
+    display: flex;
+    width: 100%;
+    height: 100vh;
+    background-color: white;
+}
+.leftCover{
+    width: 50%;
+    height: 100%;
+    background-color: rgb(243, 245, 247);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.leftCover img{
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+.container{
+    width: 50%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.loginLink{
+    display: flex;
+     gap: 5px;
+}
+.link{
+    color: rgb(56, 203, 137);
+    text-decoration: none;
+    font-weight: 500;
+    cursor: pointer;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 70%;
+}
+.form input{
+    padding-bottom: 5px;
+    border: none;
+    border-bottom: 1px solid rgb(200, 200, 200);
+   
+    font-size: 16px;
+}
+.form input:focus{
+    outline: none;
+    border-bottom: 2px solid rgb(56, 203, 137);
+}
+.Button{
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: rgb(56, 203, 137);
+    color: white;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    width: 100%;
+}
+.rememberMeandForgot{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;}
+    .rememberMe{
+        display: flex;
+        align-items: center;
+        gap: 5px;
+    }
+    .rememberMeText{
+        font-size: 14px;
+        color: gray;
+    }
+    .rememberMe input{
+        width: 25px;
+        height: 25px;
+        cursor: pointer;
+    }
+    .rememberMe label{
+        cursor: pointer;
+    }
+    .rememberMe input:checked{
+        accent-color: rgb(0, 0, 0);
+    }
+    .forgotPassword a{
+        text-decoration: none;
+        font-size: 14px;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+        font-weight: bold;
+    }

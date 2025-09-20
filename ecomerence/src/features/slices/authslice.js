@@ -1,7 +1,34 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import {  createUserWithEmailAndPassword, signInWithEmailAndPassword} from "firebase/auth";
+import {  createUserWithEmailAndPassword, signInWithEmailAndPassword, signOut, onAuthStateChanged} from "firebase/auth";
 import { auth, db } from "../../config/firestore";
+import firebase from "../../config/firestore";
 import { addDoc, collection, doc, setDoc, getDoc, } from "firebase/firestore";
+
+export const getCurrentUser = createAsyncThunk(
+  "getCurrentUser",
+  async (setLoading, store) => { 
+    console.log("getCurrentUser called");
+    try {
+  onAuthStateChanged(auth, async(user) => {
+    if (user) {
+      const uid = user.uid;
+      const userdetails = await getDoc(doc(db, "users", uid))
+      const loginedUser = userdetails?.data();
+       console.log("Current user", loginedUser.name);
+       store.dispatch(setUser(loginedUser));
+       setLoading(false);
+      return user;
+     
+    } else {
+      console.log("there is no Current user", );
+        setLoading(false)
+      return null;
+    }});
+    }
+    catch (error) { 
+      console.log(error);
+    }
+   });
 
 export const signup = createAsyncThunk(
   "signup",
@@ -38,13 +65,25 @@ export const login = createAsyncThunk(
     }
   });
 
+  export const logout = createAsyncThunk(
+    "logout",
+    async () => { 
+      await signOut(auth);
+      return true;
+    });
+
+
 export const authSlice = createSlice({
   name: "auth",
   initialState: {
-     User: [],
+     User: null,
      Loading: false
   },
-  reducers: {},
+  reducers: {
+    setUser: (state, action) => {
+      state.User = action.payload;
+    }
+  },
   extraReducers: (builder) => {
     builder.addCase(signup.pending, (state) => {
       state.Loading = true;
@@ -62,7 +101,22 @@ export const authSlice = createSlice({
     builder.addCase(login.pending, (state) => {
       state.Loading = true;
     });
+    builder.addCase(logout.fulfilled, (state) => {
+      state.User = null;
+      state.Loading = false;
+    });
+    builder.addCase(logout.pending, (state) => {
+      state.Loading = true;
+    });
+    builder.addCase(getCurrentUser.fulfilled, (state, action) => {
+      state.User = action.payload;
+      state.Loading = false;
+    });
+    builder.addCase(getCurrentUser.pending, (state) => {
+      state.Loading = true;
+    });
   },
 });
 
 export default authSlice.reducer;
+export const {setUser} = authSlice.actions; 
